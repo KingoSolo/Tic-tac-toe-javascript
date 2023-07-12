@@ -7,6 +7,10 @@
     --mark-size:calc(var(--cell-size) *.9)
 }
 
+.game-container{
+    display: none;
+}
+
 body{
     margin: 0;
 }
@@ -26,27 +30,28 @@ body{
     width: var(--cell-size);
     height: var(--cell-size);
     background-color: white;
-    border: .5px solid black;
+    border: 1px solid black;
+    cursor: pointer;
 }
 
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3){
-    border-top:2px solid black;
+    border-top:none;
 }
 
 .cell:nth-child(3n + 1 ){
-    border-left:2px solid black;
+    border-left:none;
 }
 
 .cell:nth-child(3n + 3 ){
-    border-right: 2px solid black;
+    border-right:none;
 }
 
 .cell:last-child,
 .cell:nth-child(7),
 .cell:nth-child(8){
-    border-bottom:2px solid black ;
+    border-bottom:none ;
 }
 
 .cell.x::before,
@@ -55,5 +60,20 @@ body{
     width:calc(var(--mark-size) *15);
     height:var(--mark-size);
     background-color: black;
+
+}
+
+.square {
+    display:flex;
+    flex-wrap:wrap;
+    float:left;
+    border:1px solid black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:25%;
+    height:30%;
+    text-align: center;
+    font-size: 80px;
 
 }
