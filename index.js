@@ -16,8 +16,12 @@ let gameBoardModule = (function(){
         render();
     }
     
+    const getGameBoard =() =>{
+        return gameBoard;
+    }
     return {render,
-            update
+            update,
+            getGameBoard
     };
 })();
 
@@ -47,11 +51,22 @@ const Game = (() => {
 
     const handleClick = (event) =>{
         const cellIndex = Array.from(event.target.parentNode.children).indexOf(event.target);
-        gameBoardModule.update(cellIndex,players[currentPlayerIndex].mark)
+        if (gameBoardModule.getGameBoard()[cellIndex] !== "") return;
+        gameBoardModule.update(cellIndex,players[currentPlayerIndex].mark) 
         currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
+       
       };
+      const restart = () =>{console.log("hi")
+        for(let i = 0; i<9 ;i++){
+            gameBoardModule.update(i,"")
+        }
+        gameBoardModule.render()
+      }
+    
     return{
-        start,handleClick
+        start,
+        restart,
+        handleClick
     };
 })();
 document.addEventListener("DOMContentLoaded", () => {
@@ -59,11 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
     startButton.addEventListener("click", () => {
       const gameContainer = document.querySelector(".game-container");
       gameContainer.style.display = "block";
-      Game.start();
-      
-      
+      Game.start(); 
     });
   });
+
+  const restartBtn = document.querySelector("#new-game")
+  restartBtn.addEventListener("click",()=>{
+    Game.restart();
+  })
 
   
   

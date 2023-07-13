@@ -12,7 +12,7 @@
 }
 
 body{
-    margin: 0;
+  margin: 0;
 }
 
 .game-board{
@@ -54,26 +54,7 @@ body{
     border-bottom:none ;
 }
 
-.cell.x::before,
-.cell.x::after{
-    content:'';
-    width:calc(var(--mark-size) *15);
-    height:var(--mark-size);
-    background-color: black;
-
-}
-
-.square {
-    display:flex;
-    flex-wrap:wrap;
-    float:left;
-    border:1px solid black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:25%;
-    height:30%;
-    text-align: center;
-    font-size: 80px;
-
-}
+.controls {
+    margin-bottom: 20px;
+  }
+  
