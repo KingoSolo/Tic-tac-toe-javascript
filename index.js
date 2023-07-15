@@ -92,7 +92,6 @@ const Game = (() => {
     };
 })();
 
-
   function checkforWin(gameBoard){
     const winningCombination = [
         [0,1,2],
