@@ -52,7 +52,7 @@ body {
     cursor: pointer;
     user-select: none;
     font-family: "Comic Sans MS" ,"Chalkboard" ;
-    line-height: 0.9;
+    line-height: 1.0;
 }
 .cell:hover {
     background-color: #d8e4e9;
@@ -61,7 +61,7 @@ body {
 .cell:first-child,
 .cell:nth-child(2),
 .cell:nth-child(3){
-    border-top:none;
+ border-top:none;
 }
 
 .cell:nth-child(3n + 1 ){
