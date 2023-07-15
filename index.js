@@ -81,7 +81,8 @@ const Game = (() => {
         }
         gameBoardModule.render();
         gameOver = false;
-        document.querySelector("#message").innerHTML = ""
+        document.querySelector("#message").innerHTML = "";
+        Game.start();
       }
     
     return{
