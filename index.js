@@ -1,3 +1,4 @@
+//message function to show win or tie
 const displayController = (() => {
     const renderMessage = (message) =>{
         document.querySelector("#message").innerHTML = message
@@ -129,4 +130,3 @@ const Game = (() => {
       Game.restart();
     });
   });
-  
