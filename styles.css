@@ -32,6 +32,9 @@ body{
     background-color: white;
     border: 1px solid black;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cell:first-child,
@@ -58,3 +61,20 @@ body{
     margin-bottom: 20px;
   }
   
+
+  .cell::before {
+    content: '';
+    position: absolute;
+    width: var(--mark-size);
+    height: 4px;
+    background-color: black;
+}
+
+.cell.x::before {
+    transform: rotate(45deg);
+}
+
+.cell.o::before {
+    height: var(--mark-size);
+    width: 4px;
+}
